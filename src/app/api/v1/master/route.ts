@@ -35,7 +35,7 @@ export async function POST (request: NextRequest) {
     return NextResponse.json(
         {
           status: 200,
-          status_message: "Successfully created unit",
+          status_message: "Successfully saved the master data",
           data: data,
         },
         { status: 200 }
