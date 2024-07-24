@@ -26,6 +26,21 @@ export async function POST (request: NextRequest) {
         id: uuidv4(),
         data: req.data,
     }
+
+    try {
+    await fetch(`http://116.193.191.227:8801/masters`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            data: req.data,
+        }),
+    });
+  } catch (error) {
+    console.error('Error input the master data:', error);
+   }
+    
     
     const data = await db
                        .insert(master_data)
